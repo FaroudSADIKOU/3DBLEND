@@ -1,0 +1,35 @@
+
+/:\ pour avoir une vision d'ensemble des gestes incorporés, 
+ne pas hésiter à se référer à "gestes.jpg" dans le dossier documentation
+
+Le interactions s'effectue pour le moment de cette façon : 
+(Changement possible dans le code, se référer également au diagramme d'interaction)
+à partir du menu principal (lorsque le boutton "Use Leap" a été enclenché) :
+la main droite sera responsable d'effectuer les gestes (symbole) et la main gauche sera
+responsable d'effectuer les opérations en elles-memes (position, distance...)
+Si symbole "1" -> lancement du module de translation
+    - Des lors on peut switch entre le rotate/scale/translate avec le symbole "2"
+    - Valider avec "V"
+    - Annuler avec "1"
+    - Specialement pour le scale changer d'axe avec "O"
+    Le module  : 
+        - translation utilise la position de la main gauche pour translate l'objet / la selection
+        - rotation utilise également la position de la main mais empêche le retour en arrière
+        - le scale utilise la distance entre les deux mains
+Si symbole "2" -> lancement du module de selection puis extrusion :
+    Un crayon apparait déplaçable par la position de la main gauche
+    l'idée étant de rentrer en contact avec les faces que l'on souhaite selectionner
+    - Validation avec "V" de la main droite toujours
+    - Lextrusion utilise ensuite la hauteur de la main pour effectuer une extrusion plus au moins importante
+    - Validation avec "v" ou annulation avec "1"
+Si symbole "R" -> lancement du module de selection puis translation
+Si symbole "B" -> lancement module de deformation 
+    - fonctionne avec la hauteur de la main gauche
+    - "O" pour changer l'axe
+    - "2" pour changer la méthode (twist, bend...)
+    - "v" pour Valider
+    - "1" pour Annuler
+
+toutes les opérations n'ont pas été implémenté pour éviter de "surcharger" 
+les intéractions possibles mais libre au developpeur de changer la configuration
+    

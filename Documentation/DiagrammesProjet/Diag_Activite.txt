@@ -1,0 +1,52 @@
+@startuml
+[*] --> Selecteur
+state Selecteur
+state Editeur
+state Transformateur
+state TransformateurDuMaillage
+state Extrudeur
+state OutilsSupp
+state SelectMeshPart
+
+Selecteur : Selectionner objet à éditer
+Selecteur : Ajouter un nouvel objet
+
+Editeur : Transformer
+Editeur : TransformerLeMaillage
+Editeur : Extruder
+
+Extrudeur : Extrude
+
+SelectMeshPart : Select
+SelectMeshPart : Solo/Poly Mod
+SelectMeshPart : vertice/edge/face Mod
+
+
+Transformateur : Translate
+Transformateur : Scale
+Transformateur : Rotate
+
+TransformateurDuMaillage : Translate
+TransformateurDuMaillage : Scale
+TransformateurDuMaillage : Rotate
+
+OutilsSupp : Warping
+OutilsSupp : Tapering
+OutilsSupp : Twisting 
+OutilsSupp : Bending
+
+Selecteur --> Editeur : Selection d'un objet
+Editeur --> Selecteur :  Back
+Editeur --> Transformateur : Mode Transform
+Editeur --> TransformateurDuMaillage : Mode TransformMesh
+Editeur --> Extrudeur : Mode Extrude
+Editeur --> OutilsSupp : Mode supp
+Transformateur --> Editeur : Back
+TransformateurDuMaillage --> SelectMeshPart : Init
+TransformateurDuMaillage --> Editeur : Valid/Back
+SelectMeshPart --> TransformateurDuMaillage : Valid
+Extrudeur --> SelectMeshPart : Init
+Extrudeur --> Editeur : Valid/Back
+SelectMeshPart --> Extrudeur: Valid
+OutilsSupp --> Editeur : Back
+@enduml

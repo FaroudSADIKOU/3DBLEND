@@ -1,0 +1,26 @@
+Avant d'installer l'add-on l'installation des soft/librairies suivantes est requises :
+Blender : 2.9
+Python 3.7.7
+sklearn 0.23.2
+Pandas 1.1.3
+
+/:\ il est possible que l'add-on fonctionne sous d'autres versions (non testées)
+
+
+Tout d'abord copier/coller le dossier "leaplib" à la racine de votre disque dur C:
+Par la suite, blender ouvert -> 
+- Onglet scripting 
+- Cliquer sur l'icône de dossier (open text)
+- Selectionner "C:\leaplib\AddOn_PanelWithButtons.py"
+- Cliquer sur le boutton play
+
+Par la suite vous verrez apparaître différents bouttons dans un sous-onglet "3DBLEND" en bas à droite
+avec différents bouttons (translate, rotate...) qui nécéssiteront le Leap Motion connecté bien entendu
+De plus, le dernier boutton "use Leap" lance le module de reconaissance de geste. (voir le fichier interaction.txt)
+
+Alternative non testée -> 
+- clic sur Edit
+- clic sur Add-ons
+- install
+- Selectionner le "AddOn_PanelWithButtons.py"
+- Activer l'add-on

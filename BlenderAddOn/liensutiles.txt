@@ -1,0 +1,10 @@
+SELECT VERTICES :
+https://blender.stackexchange.com/questions/43127/how-do-i-select-specific-vertices-in-blender-using-python-script
+COORDINATE FROM VEXTERX TO WORLD SPACE : 
+https://blender.stackexchange.com/questions/6155/how-to-convert-coordinates-from-vertex-to-world-space
+MODAL : 
+https://blender.stackexchange.com/questions/442/how-can-i-create-a-script-that-runs-continuously-but-does-not-block-the-interfac
+BMESH : 
+https://docs.blender.org/api/current/bmesh.html#module-bmesh
+GET LOCATION VIEW :
+https://stackoverflow.com/questions/9028398/change-viewport-angle-in-blender-using-python

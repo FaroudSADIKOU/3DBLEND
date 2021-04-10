@@ -1,0 +1,52 @@
+@startuml
+allowmixing
+
+package Module3D #DDDDDD {
+    class DeformModal
+    class ExtrudeModal
+    class saveAndLoadModal
+    class SelectModal
+    class SimpleTransformModal
+    class drawinText
+    file pencil_obj
+    pencil_obj <-- SelectModal
+}
+
+
+class Leap
+
+package Controller #DDDDDD {
+    class PanelWithButtons
+    class MainModalReco
+    file interaction_settingsMap
+    interaction_settingsMap --> MainModalReco
+    PanelWithButtons --> MainModalReco
+    
+}
+package ModuleReco #DDDDDD {
+    class collector
+    class handTrackerWithSlidingWindows
+    class Main
+    package "Recognition"#FFFFFF {
+        class classifier
+        file random_forest_pkl
+        class parser
+        class reco_utils
+
+    }
+}
+
+MainModalReco --> Main
+Controller  --> Module3D
+
+Module3D --> Leap
+ModuleReco --> Leap
+Controller --> Leap
+
+note  top of Leap : Controlleur du Leap recompilé pour python 3.7
+note top of PanelWithButtons : gère le plugin sur Blender et d'activer les opérations et le module de reconaissance
+note bottom of MainModalReco : Pont entre le module de reconaissance et l'activation des différents modules 3D
+note bottom of ModuleReco : Chargé de reconnaître les différentes gestes et de renvoyer le résultat au controlleur
+note right of Module3D : Gère les mesh de la scène et de proposer diverses opérations de transformations, déformations, selection...
+note bottom of drawinText : Gère le feedBack Visuel pour l'utilisateur
+@enduml
